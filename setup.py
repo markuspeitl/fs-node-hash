@@ -26,7 +26,6 @@ setup(
 
     ],
     install_requires=[
-        'hashlib',
         'recurse-tree-process'
     ],
     entry_points={},
