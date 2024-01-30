@@ -1,0 +1,10 @@
+.pyc
+.cpython*
+*.pyc
+index.json
+index.json.zlib
+*__pycache__
+__pycache__
+*.egg*
+dist
+build
