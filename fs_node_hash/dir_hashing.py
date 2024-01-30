@@ -2,7 +2,7 @@
 from .hash_buffer import hash_buffer
 
 
-def calc_dir_hash(children_hash_list: list):
+def calc_dir_hash(children_hash_list: list) -> str:
     sorted_child_hashes = sorted(children_hash_list)
     children_signature = ('').join(sorted_child_hashes)
     dir_hash = hash_buffer(children_signature)

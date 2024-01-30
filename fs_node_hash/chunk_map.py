@@ -7,6 +7,7 @@ def sort_file_chunks_in_chunk_map(
         chunk_map: dict,
         file_path: str,
         chunk_block_size_bytes: int = default_chunk_block_size_bytes):
+
     try:
         with open(file_path, "r") as text_file:
             for line in text_file:
@@ -24,24 +25,4 @@ def sort_file_chunks_in_chunk_map(
                 sha256_hash.update(byte_block)
                 sha256_hash.hexdigest()
 
-                chunk_map[sha256_hash] = chunk_block_size_bytes
-
-
-def calculate_chunk_map(file_metric):
-    chunk_map = {}
-    sort_file_chunks_in_chunk_map(chunk_map, file_metric['path'])
-
-
-def get_all_subfiles(parent_path):
-    return []
-
-
-def calculate_dir_chunk_map(directory_metric):
-    dir_path = directory_metric['path']
-    chunk_map = {}
-    file_paths = get_all_subfiles(dir_path)
-
-    for file_path in file_paths:
-        sort_file_chunks_in_chunk_map(chunk_map, file_path)
-
-    return chunk_map
+                chunk_map[sha256_hash] = file_path

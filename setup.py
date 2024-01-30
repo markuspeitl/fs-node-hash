@@ -25,7 +25,10 @@ setup(
         "Topic :: Software Development :: Libraries"
 
     ],
-    install_requires=['hashlib'],
+    install_requires=[
+        'hashlib',
+        'recurse-tree-process'
+    ],
     entry_points={},
     packages=['fs_node_hash']
 )
