@@ -36,10 +36,6 @@ def init_hash_results(hash_results: NodeHashResults = {}):
     return hash_results
 
 
-_hash_file_samples_cnt_const = 20
-_hash_file_block_cnt_const = 6
-
-
 # Restore mtime and atime after hashing
 sample_file_hash = time_transient(sample_file_hash)
 

@@ -5,12 +5,14 @@ import math
 
 # 4KB
 default_chunk_block_size_bytes = 4096
+default_file_samples_cnt_const = 12
+default_blocks_per_sample_cnt_const = 4
 
 
 def calc_file_hash(
         path: str,
-        blocks_limit=-1,
-        chunk_block_size_bytes=default_chunk_block_size_bytes) -> str:
+        blocks_limit: int = -1,
+        chunk_block_size_bytes: int = default_chunk_block_size_bytes) -> str:
 
     sha256_hash = hashlib.sha256()
     with open(path, "rb") as file_stream:
@@ -38,9 +40,9 @@ def calc_file_hash(
 
 def sample_file_hash(
         path: str,
-        samples_cnt: int,
-        blocks_per_sample: int,
-        chunk_block_size_bytes=default_chunk_block_size_bytes):
+        samples_cnt: int = default_file_samples_cnt_const,
+        blocks_per_sample: int = default_blocks_per_sample_cnt_const,
+        chunk_block_size_bytes: int = default_chunk_block_size_bytes):
 
     sha256_hash = hashlib.sha256()
     with open(path, "rb") as file_stream:
