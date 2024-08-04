@@ -3,6 +3,8 @@ from .hash_buffer import hash_buffer
 from .file_hashing import default_chunk_block_size_bytes
 
 
+# Not tested
+# For chunk level deduplication
 def sort_file_chunks_in_chunk_map(
         chunk_map: dict,
         file_path: str,
